@@ -16,13 +16,10 @@
 
 {{ content }}
 
-<!-- {% block main -%}
-コンテンツ
-{%- endblock %} -->
-
 {% include partial/ad.html %}
 
 <script src="js/site.js"></script>
-{% block js -%}{%- endblock %}
+
+<footer>&copy; copyright <a href="{{ general.copyrighturl }}" target="_blank">{{ general.copyright }}</a> all rights reserved.</footer>
 </body>
 </html>

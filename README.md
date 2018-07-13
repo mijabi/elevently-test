@@ -73,7 +73,7 @@ img/ フォルダ配下の画像郡は特に何もされず。
 
 これで、dist ディレクトリに書き出せる。
 
-## [test-4] コンパイル元ファイル指定 --input オプション
+## [test-4] コンパイル元ディレクトリ指定 --input オプション
 
 諸々のファイルはリポジトリ直下に設置していたので、規定のディレクトリ配下に移動し、編集するファイルはその配下に限定したい。  
 index.html と img ディレクトリを src 配下へ移動し、
@@ -91,7 +91,7 @@ Static page/site generator を利用する大きな利用として、共通す�
 
 eleventy ではデフォルトで _incudes ディレクトリが layout ディレクトリとして使えるので、
 
-__src/_includes/base.html__
+_src/_includes/base.html__
 
 ```html
 <!DOCTYPE html>
@@ -114,7 +114,7 @@ __src/_includes/base.html__
 上のように共通部分の html が入ったファイルを作成、
 次に
 
-__src/index.html__
+_src/index.html_
 
 ```html
 ---
@@ -173,13 +173,13 @@ src/_includes/base.html の {{ content }} は予約語で、layout として呼�
 
 設置ファイル場所は _includes 配下ならどこでも良いですが、管理上わかり易くする為に partial ディレクトリを作成し、そこに設置することにします。
 
-__src/_includes/partial/ad.html__
+_src/_includes/partial/ad.html__
 
 ```ad.html
 <aside>this is ad</aside>
 ```
 
-__src/_includes/base.html__
+_src/_includes/base.html__
 
 ```html
 <!DOCTYPE html>
@@ -227,3 +227,21 @@ __src/_includes/base.html__
 
 ad.html の <aside /> タグが追加されました。
 
+## [test-6] 外部 json ファイルを共通変数として利用
+
+html レベルではなく、文字列や配列データを共通データとして持ちたい場合、 _data ディレクトリ配下に json ファイルを設置することで呼び出すことができます。 src/_data/general.json を設置した場合、 ```{{ general.*** }}``` で呼び出すことができます。
+
+_/src/_data/general.json__
+
+```json
+{
+  "copyright": "pulp.photo",
+  "copyrighturl": "https://pulp.photo/"
+}
+```
+
+ページ側では例えば以下のように指定
+
+```
+<footer>&copy; copyright <a href="{{ general.copyrighturl }}" target="_blank">{{ general.copyright }}</a> all rights reserved.</footer>
+```
