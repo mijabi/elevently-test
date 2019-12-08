@@ -245,3 +245,12 @@ _/src/_data/general.json__
 ```
 <footer>&copy; copyright <a href="{{ general.copyrighturl }}" target="_blank">{{ general.copyright }}</a> all rights reserved.</footer>
 ```
+
+## [test-7] sass compile も含める
+
+% npm install -g node-sass
+
+% node-sass -w ./src/sass -o ./dist/css --output-style compressed --watch
+
+% eleventy --formats=gif,png,jpg,html --output=dist --input=src --serve & node-sass -w ./src/sass -o ./dist/css --output-style compressed --watch
+
