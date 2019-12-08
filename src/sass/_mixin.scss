@@ -1,0 +1,20 @@
+@charset "utf-8";
+
+
+@mixin r( $point ) {
+  // @if $point==320 {
+  //     @media ( max-width: 320px ) {
+  //         @content;
+  //     }
+  // }
+  @if $point==768 {
+      @media ( max-width: 768px ) {
+          @content;
+      }
+  }
+  // @if $point==1024 {
+  //     @media ( max-width: 1024px ) {
+  //         @content;
+  //     }
+  // }
+}

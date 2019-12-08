@@ -1,23 +1,47 @@
 @charset "utf-8";
 
+@import "mixin";
 
-@mixin r( $point ) {
-  // @if $point==320 {
-  //     @media ( max-width: 320px ) {
-  //         @content;
-  //     }
-  // }
-  @if $point==768 {
-      @media ( max-width: 768px ) {
-          @content;
-      }
-  }
-  // @if $point==1024 {
-  //     @media ( max-width: 1024px ) {
-  //         @content;
-  //     }
-  // }
+$basicGray: #737479;
+$basicTextColor: #fff;
+$basicLineHeight: 1.2;
+
+html, body {
+    background: $basicGray;
+    color: $basicTextColor;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", Helvetica, "游ゴシック体", YuGothic, "Yu Gothic M", "游ゴシック Medium", "Yu Gothic Medium", "メイリオ", Meiryo, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    line-height: $basicLineHeight;
+    margin: 0;
+    padding: 0;
 }
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    // line-height: $basicLineHeight;
+}
+
+dl, dt, dd, ol, ul, li {
+    list-style: none none outside;
+    margin: 0;
+    padding: 0;
+    // line-height: $basicLineHeight;
+}
+a,
+a:link {
+    color: $basicTextColor;
+    text-decoration: underline;
+}
+a:active,
+a:hover,
+a:visited {
+    text-decoration: underline;
+}
+img {
+    vertical-align: middle;
+}
+
+
 
 body {
     font-size: 1em;
