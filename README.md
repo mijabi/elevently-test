@@ -254,3 +254,15 @@ _/src/_data/general.json__
 
 % eleventy --formats=gif,png,jpg,html --output=dist --input=src --serve & node-sass -w ./src/sass -o ./dist/css --output-style compressed --watch
 
+## [test-8] include 時に変数を渡し、partial 側で受け取ることができる
+
+
+```
+{% include partial/ad.html, {t: 2} %}
+```
+
+```
+{% if t == 2 %}
+<p>t = 2</p>
+{% endif%}
+```
