@@ -266,3 +266,15 @@ _/src/_data/general.json__
 <p>t = 2</p>
 {% endif%}
 ```
+
+## [test-9] minify も global installed npm で。
+
+$ npm install -g html-minifier
+
+$ html-minifier --input-dir dist --output-dir _dist --collapse-whitespace --minify-css --remove-comments
+
+--input-dir: input folder
+--output-dir: output folder
+--collapse-whitespace: remove whitespace
+--minify-css: minify inline css
+--remove-comments: remove comments ()
