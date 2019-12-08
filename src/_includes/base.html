@@ -2,8 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="{{ siteDescription }}">
+  <meta name="keywords" content="{%- for mk in metaKeywords -%}{{ mk }},{%- endfor -%}">
+  <meta property="og:title" content="{{ siteTitle }}">
+  <meta property="og:description" content="{{ siteDescription }}">
+  <!-- <link rel="amphtml" href=""> -->
+  <meta property="og:url" content="{{ pageUrl }}">
+  <meta property="og:image" content="{{ ogImage }}">
+  <meta property="og:site_name" content="{{ siteTitle }}">
+  <!-- <meta property="fb:app_id" content=""> -->
+  <meta name="twitter:card" content="summary" />
+  {%- if twitterId -%}<meta name="twitter:site" content="@{{ twitterId }}">{%- endif -%}
+  {%- if twitterCreatorId -%}<meta name="twitter:creator" content="@{{ twitterCreatorId }}">{%- endif -%}
   <title>{{ siteTitle }}</title>
-  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/index.css">
 <!-- {% block css -%}{%- endblock %} -->
 </head>
 <body>
